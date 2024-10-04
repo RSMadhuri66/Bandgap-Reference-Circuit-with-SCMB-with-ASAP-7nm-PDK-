@@ -22,6 +22,6 @@ The BGR is essential for providing a stable reference voltage that remains consi
 #### Nfet Id and Vd Characteristics 
 
 #### CMOS Inverter_vtc Characteristics 
-     - ##### W/L ratio 
+_ ##### W/L ratio 
      
 
