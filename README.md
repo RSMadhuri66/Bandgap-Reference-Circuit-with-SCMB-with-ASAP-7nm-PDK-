@@ -151,19 +151,23 @@ The schematic of Nfet is given below. It's created in Xschem.
 </picture>
 
 
-#### CMOS Inverter_vtc Characteristics 
-##### 2.1 W/L Ratio 
+### CMOS Inverter_vtc Characteristics 
+##### 2.1 W/L RATIO
 
 The week 2 session starts with calculation of W/L ratio which is important in the CMOS because it has a direct impact on the transistor's electrical properties, such as its current drive capability, switching speed, and power consumption. This ratio essentially dictates the overall performance and efficiency of the entire circuit design. For 7nm PDK we would be varying only ```nfins``` for npmos and nnmos in the spice circuit. The length is going to be constant which is 7nm. We start with varying the nfins value and calculating the other parameters 
 
-##### 2.2 Switching Threshold voltage. 
+##### 2.2 SWITCHING THRESHOLD VOLTAGE  
 
 The switching threshold, denoted as ```V_th```, is defined as the point where the input voltage ```nfet_in``` equals the output voltage ```nfet_out```. The ratio of the relative driving strengths of the PMOS and NMOS transistors determines this switching threshold. To raise ```V_th```, a larger ratio is needed, which involves widening the PMOS transistor. Conversely, enhancing the strength of the NMOS transistor will shift the switching threshold closer to ground (GND).
 
 Spice command for calculating V_th 
 ``` meas dc v_th when nfet_out=nfet_in``` 
 
-##### 2.3 Drain Current Id 
+<picture>
+<img alt = "CMOS VTC" src="vtc.png">
+</picture>
+
+##### 2.3 DRAIN CURRENT (Id) 
 
 Drain current (𝐼𝐷) is the current that flows from the drain terminal to the source terminal in a field-effect transistor (FET). It is primarily controlled by the voltage applied at the gate terminal, which creates an electric field that modulates the conductivity of the channel between the drain and source. As the gate voltage increases, the channel becomes more conductive, allowing more current to flow from the drain to the source. In the saturation region, the drain current reaches a constant value, independent of the drain-source voltage, while in the triode region, it increases linearly with the drain-source voltage. The drain current is a key parameter in determining the performance of transistors in various applications, such as amplifiers and digital circuits. 
 
@@ -175,7 +179,7 @@ plot id
 
 ```
 <picture>
-<img alt = "VTC." src="VTC.png">
+<img alt = "Drain Current" src="id.png">
 </picture>
 
 ##### 2.4 Gate Capacitance 
@@ -194,6 +198,7 @@ Spice commands:
     print power
 
 ```
+
 
 #### 2.6 Propagation Delay (Tp) 
 
@@ -252,6 +257,10 @@ plot gm
 ````
 The below graph is not the absolute value, for positive results please use abs command. 
 
+<picture>
+<img alt = "Transconductance" src="gm.png">
+</picture>
+
 ##### 2.10 Frequency (f) 
 
 In this case, the maximum signal frequency was calculated, using delay time. As disscussed above about rise time (tr) and fall time (tf). So the frequency would be 1/(tr+tf) 
@@ -277,6 +286,15 @@ let r_out= deriv(nfet_out,id)   : Calculates the output resistance by taking the
 plot r_out                      : Plots the output resistance.
 
 ```
+<picture>
+<img alt = "Output Resistance" src="r_out.png">
+</picture>
+
+Schematic of the Inverter 
+
+<picture>
+<img alt = "Inverter_VTC" src="invsch.png">
+</picture>
 
 ##### Characteristics Table 
 
