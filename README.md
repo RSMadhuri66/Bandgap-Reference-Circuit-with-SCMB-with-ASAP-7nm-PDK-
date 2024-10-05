@@ -141,13 +141,13 @@ pre_osdi /home/hprcse/Documents/test/bsimcmg.osdi
 The plot Id vs Vd
 
 <picture>
-<img alt = "Id vs Vd" src="idvd">
+<img alt = "Id vs Vd" src="idvd.png">
 </picture>
 
 The schematic of Nfet is given below. It's created in Xschem. 
 
 <picture>
-<img alt = "Schematic" src="nfetschem">
+<img alt = "Schematic" src="nfetschem.png">
 </picture>
 
 
