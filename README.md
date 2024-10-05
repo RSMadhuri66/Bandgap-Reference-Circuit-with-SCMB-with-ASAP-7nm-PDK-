@@ -52,5 +52,108 @@ plot id
 <picture>
 <img alt = "VTC." src="VTC.png">
 </picture>
+
+##### 2.4 Gate Capacitance 
+
+##### 2.5 Power Consumption 
+
+#### 2.6 Propagation Delay (Tp) 
+
+The propagation delay of a logic gate e.g. inverter is the difference in time (calculated at 50% of input-output transition), when output switches, after application of input. Rise time (tr) is the time, during transition, when output switches from 10% to 90% of the maximum value. Fall time (tf) is the time, during transition, when output switches from 90% to 10% of the maximum value. Many designs could also prefer 30% to 70% for rise time and 70% to 30% for fall time. It could vary upto different designs.
+
+Spice Commands 
+```
+meas tran tpr when nfet_in=0.35 RISE=1 : Measures the rise time (tpr) when the input voltage reaches 0.35V
+meas tran tpf when nfet_out=0.35 FALL=1 : Measures the fall time (tpf) when the output voltage reaches 0.35V. 
+let tp = (tpf + tpr)/2 : Calculates the average propagation delay (tp) as the mean of the rise and fall times.
+print tp : prints the Propagation Delay
+
+```
+
+##### 2.7 Gain (Av) 
+
+Gain is defined as Change in output voltage to that of input voltage. 
+Spice Commands to calculate gain 
+```
+let gain_av=deriv(nfet_out) : this gives out negative gain
+** to get abs gain we can use
+
+let gain_av=abs(deriv(nfet_out)) : Gives the absolute value of gain.
+plot gain
+```
+
+##### 2.8 Noise Margin 
+
+##### 2.9 Transconductance (Gm) 
+
+Transconductance is defined as the ratio of change in drain current and change in Vgs (Gate-source Voltage). In our case, we already have drain current and VGS is input voltage which is ```nfet_in```. 
+
+Spice commands 
+```
+let gm = real(deriv(id, nfet_in)) : Calculates the transconductance (gm) as the derivative of the branch current with respect to the input voltage.
+meas dc gm_max MAX gm: Measures the maximum transconductance (gm_max).
+plot gm
+
+````
+The below graph is not the absolute value, for positive results please use abs command. 
+
+##### 2.10 Frequency (f) 
+
+In this case, the maximum signal frequency was calculated, using delay time. As disscussed above about rise time (tr) and fall time (tf). So the frequency would be 1/(tr+tf) 
+Spice commands used for this : 
+```
+tran 0.1 100p                          : Performs a transient analysis with a time step of 0.1ns and a total simulation time of 100ps.
+meas tran tr when nfet_in=0.07 RISE=1  : Measures the rise time (tr) when the input voltage reaches 0.07V.
+meas tran tf when nfet_out=0.63 FALL=1 : Measures the fall time (tf) when the output voltage reaches 0.63V.
+let t_delay = tr + tf                  : Calculates the total delay time as the sum of rise and fall times.
+print t_delay                          : Prints the total delay time.
+let f = 1/t_delay                      : Calculates the frequency (f) as the reciprocal of the total delay time.
+print f                                : Prints the frequency.
+
+```
+
+##### 2.11 Output Resistance  
+
+The output resistance is defined as the ratio of output node voltage and the change in drain current. So here we are taking derivative of output voltage and derivative of the drain current. 
+Spice commands: 
+
+```
+let r_out= deriv(nfet_out,id)   : Calculates the output resistance by taking the derivative of the output voltage with respect to the branch current.
+plot r_out                      : Plots the output resistance.
+
+```
+
+##### Characteristics Table 
+
+```
+
+| Sr. No | W (Width) pmos | L (Length) pmos | (W/L Ratio) pmos | W (Width) nmos | L (Length) nmos | (W/L Ratio) nmos | Switching Threshold Voltage (VTC) | Drain Current (Id) | Gate Capacitance (Cg) | Power Consumption (P) | Propagation Delay (t_pd) (ps) | Gain (Av) | Noise Margin (NM) | Transconductance (gm) | Frequency (f) | Output Resistance (Ro) |
+|--------|-----------------|-----------------|-------------------|-----------------|-----------------|-------------------|-----------------------------------|---------------------|------------------------|------------------------|----------------------------------|-----------|-------------------|------------------------|----------------|-----------------------|
+| 1      | 10              | 7nm             |                   | 14              | 7nm             |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 2      | 11              | 7nm             |                   | 15              | 7nm             |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 3      | 16              | 7nm             |                   | 15              | 7nm             |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 4      | 17              | 7nm             |                   | 15              | 7nm             |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 5      | 17              | 7nm             |                   | 16              | 7nm             |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 6      | 17              |                  |                   | 17              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 7      | 16              |                  |                   | 17              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 8      | 17              |                  |                   | 14              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 9      | 16              |                  |                   | 14              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 10     | 16              |                  |                   | 15              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 11     | 16              |                  |                   | 16              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 12     | 15 (349.5)      |                 |                   | 14              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 13     | 15              |                  |                   | 15              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 14     | 14              |                  |                   | 15              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 15     | 13              |                  |                   | 14              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 16     | 14 (349.913)    |                 |                   | 13              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 17     | 15              |                  |                   | 13              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 18     | 15              |                  |                   | 16              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 19     | 18 (348.7)      |                 |                   | 17              |                 |                   |                                   |                     |                        |                        |                                  |           |                   |                        |                |                       |
+| 20     | 13 (350.32)     |                 |                   | 12              |                 |                   |                                   | 0.2 mA              |                        |                        | 6.42                             | 6.42      |                   |                        |                |                       |
+
+```
+
+
+
+
      
 
