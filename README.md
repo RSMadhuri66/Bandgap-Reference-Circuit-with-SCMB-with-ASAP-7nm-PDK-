@@ -20,11 +20,17 @@ The BGR is essential for providing a stable reference voltage that remains consi
 
 #### ASAP 7nm PDK 
 
+The ASAP 7nm Process Design Kit (PDK) is a comprehensive suite of design resources tailored for the 7nm technology node, developed to facilitate the design and fabrication of integrated circuits (ICs) at this advanced scale. This PDK provides a detailed set of design rules, models, and guidelines that enable engineers to optimize their designs for performance, power efficiency, and area (PPA). ASAP 7nm supports a range of design flows, ensuring compatibility with various Electronic Design Automation (EDA) tools. Additionally, the PDK includes corner cases, design-for-manufacturability (DFM) features, and process variation models, which are critical for ensuring that designs yield successfully during fabrication.
+
+Incorporating cutting-edge features, the ASAP 7nm PDK is designed to leverage the benefits of FinFET technology, allowing for significant improvements in transistor performance and reduced leakage current compared to traditional planar devices. This PDK also emphasizes robust power management capabilities, providing designers with tools to optimize dynamic and static power consumption. Furthermore, ASAP 7nm is aligned with industry standards, enabling designers to achieve rapid time-to-market while ensuring that their designs meet the stringent requirements of modern semiconductor applications, such as high-performance computing, mobile devices, and artificial intelligence.
+
 
 
 ### Week 2 - Characterization of CMOS VTC 
 
 #### Nfet Id and Vd Characteristics 
+
+
 
 #### CMOS Inverter_vtc Characteristics 
 ##### 2.1 W/L Ratio 
@@ -56,6 +62,19 @@ plot id
 ##### 2.4 Gate Capacitance 
 
 ##### 2.5 Power Consumption 
+
+Power Consumption is the product of integral of transient current and Vdd divided by the time period. 
+
+Spice commands: 
+
+```
+   let trans_current = v2#branch
+    meas tran id_pwr integ trans_current from=20e-12 to=60e-12
+    let pwr = id_pwr *0.7
+    let power = abs(pwr/40)
+    print power
+
+```
 
 #### 2.6 Propagation Delay (Tp) 
 
