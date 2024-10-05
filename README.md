@@ -142,7 +142,6 @@ plot r_out                      : Plots the output resistance.
 
 ##### Characteristics Table 
 
-```
 | Sr. no | W (Width) pMOS (nm) | L (Length) pMOS (nm) | W/L Ratio pMOS | W (Width) nMOS (nm) | L (Length) nMOS (nm) | W/L Ratio nMOS | Switching Threshold Voltage (VTC) (mV) | Drain Current (Id) (µA) | Gate Capacitance (Cg) | Power Consumption (P) | Propagation Delay (t_pd) (ps) | Gain (Av)                 | Noise Margin (NM)        | Transconductance (gm) (x10^-3) | Frequency (f) (GHz) | Output Resistance (Ro) |
 |--------|---------------------|----------------------|----------------|---------------------|----------------------|----------------|---------------------------------------|------------------------|---------------------|---------------------|----------------------------|--------------------------|--------------------------|--------------------------|-----------------------|-------------------------|
 | 1      | 10                  | 7                    | 1.43           | 14                  | 7                    | 2              | 321.54                                | 191.1                  | 2.674e-17           | 0.2511              | 6.418                     | NMH=0.2355V, NML=0.1346V | 9.695                   | 22.592                   | 6.4122                |                         |
@@ -165,7 +164,7 @@ plot r_out                      : Plots the output resistance.
 
 
 
-```
+
 
 
 
