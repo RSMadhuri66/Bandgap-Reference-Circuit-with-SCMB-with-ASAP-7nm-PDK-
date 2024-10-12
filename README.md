@@ -370,6 +370,11 @@ The below image is taken as a reference for designing a bandgap circuit using SC
 </picture>
 
 
+#### Design using Xschem 
+
+<picture>
+<img alt = "Xschem" src="xschem.png">
+</picture>
 
 
 
