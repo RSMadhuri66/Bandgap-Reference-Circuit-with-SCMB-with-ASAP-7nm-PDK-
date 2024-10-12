@@ -366,7 +366,7 @@ After completing the schematic,  the simulation parameters were set up within Xs
 The below image is taken as a reference for designing a bandgap circuit using SCMB 
 
 <picture>
-<img alt = "Inverter_VTC" src="invsch.png">
+<img alt = "Bandgap_reference" src="reference.png">
 </picture>
 
 
