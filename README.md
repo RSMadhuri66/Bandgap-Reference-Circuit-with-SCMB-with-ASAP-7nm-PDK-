@@ -595,7 +595,7 @@ pre_osdi /home/madhuri/asap_7nm_Xschem/bsimcmg_arch64.osdi
 - Ngspice tutorial [ Tcl/Tk] (https://ngspice.sourceforge.io/ngspice-control-language-tutorial.html)
 - Finding Transconducatnce [Gm] (https://www.tek.com/en/support/faqs/how-do-you-find-the-transconductance-of-a-mosfet)
 - Ngspice Manual [Manual] (https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
-- 
+  
 
 
 
