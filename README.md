@@ -577,24 +577,29 @@ pre_osdi /home/madhuri/asap_7nm_Xschem/bsimcmg_arch64.osdi
 ```
 
 
+### ACKNOWLEDGEMENTS
+
+I would like to thank Kunal Gosh ( Co-Founder of VSD), Dr Skanda Deepshita (Senior Physical Design Engineer at Lemurian Labs) and Jossan Eden (Electronics Engineer) for guiding me throughout this research work on Bandgap reference circuit using ASAP 7nm PDK. 
+
+- Kunal Gosh [linkedin](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/) 
+- Dr. Skanda Deepshita [Linkedin](https://www.linkedin.com/in/dr-skandha-deepsita-s-027433ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+- Jossan Eden [Linkedin](https://www.linkedin.com/in/jossan-eleazar-b-79809a25a/)
 
 ### REFERENCES 
 
-- I would like to thank Kunal Gosh and Dr. Skanda Deepshita for providing me with this opportunity to research on Bandgap reference circuit using ASAP 7nm PDK.
-
-- Github [Bandgap Github] (https://github.com/johnkustin/bandgapReferenceCircuit)
-- Github [vsdopen2021_bgr] (https://github.com/vsdip/vsdopen2021_bgr/tree/main)
-- Github [7nm Reference Repo] (https://github.com/AsahiroKenpachi/asap_7nm_Xschem)
-- Github [sky130circuitdesign] (https://github.com/VrushabhDamle/sky130CircuitDesignWorkshop?tab=readme-ov-file)
-- 7nm Research paper [hal science research paper] (https://hal.science/hal-01558775/document)
-- Research paper [Layout and chractertization] (https://mpedram.com/Papers/PowerDensity_7nm_FinFET-glsvsli15.pdf)
-- Uc Berkeley research [Finfets] (https://escholarship.org/content/qt2d46r42j/qt2d46r42j.pdf?t=q6z2kq)
-- IIT labs [Finfet's research] (https://vlsi-iitg.vlabs.ac.in/CMOS_theory.html#:~:text=Inverter%20Static%20Characteristics%20(VTC),logic%2Dlevels%20can%20be%20obtained)
-- Michigan university classes [ Parameters claculation ] (https://www.egr.msu.edu/classes/ece410/mason/files/Ch7.pdf)
-- Cornell university ECE5745 [Capacitance and parameters] (https://cornell-ece5745.github.io/ece5745-tut10-spice/)
-- Ngspice tutorial [ Tcl/Tk] (https://ngspice.sourceforge.io/ngspice-control-language-tutorial.html)
-- Finding Transconducatnce [Gm] (https://www.tek.com/en/support/faqs/how-do-you-find-the-transconductance-of-a-mosfet)
-- Ngspice Manual [Manual] (https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
+- Github [Bandgap Github](https://github.com/johnkustin/bandgapReferenceCircuit)
+- Github [vsdopen2021_bgr](https://github.com/vsdip/vsdopen2021_bgr/tree/main)
+- Github [7nm Reference Repo](https://github.com/AsahiroKenpachi/asap_7nm_Xschem)
+- Github [sky130circuitdesign](https://github.com/VrushabhDamle/sky130CircuitDesignWorkshop?tab=readme-ov-file)
+- 7nm Research paper [hal science research paper](https://hal.science/hal-01558775/document)
+- Research paper [Layout and chractertization](https://mpedram.com/Papers/PowerDensity_7nm_FinFET-glsvsli15.pdf)
+- Uc Berkeley research [Finfets](https://escholarship.org/content/qt2d46r42j/qt2d46r42j.pdf?t=q6z2kq)
+- IIT labs [Finfet's research](https://vlsi-iitg.vlabs.ac.in/CMOS_theory.html#:~:text=Inverter%20Static%20Characteristics%20(VTC),logic%2Dlevels%20can%20be%20obtained)
+- Michigan university classes [ Parameters claculation ](https://www.egr.msu.edu/classes/ece410/mason/files/Ch7.pdf)
+- Cornell university ECE5745 [Capacitance and parameters](https://cornell-ece5745.github.io/ece5745-tut10-spice/)
+- Ngspice tutorial [Tcl/Tk](https://ngspice.sourceforge.io/ngspice-control-language-tutorial.html)
+- Finding Transconducatnce [Gm](https://www.tek.com/en/support/faqs/how-do-you-find-the-transconductance-of-a-mosfet)
+- Ngspice Manual [Manual](https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
   
 
 
