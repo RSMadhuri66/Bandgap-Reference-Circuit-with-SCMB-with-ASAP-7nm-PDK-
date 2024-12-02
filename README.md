@@ -1,4 +1,4 @@
-# Designing a Bandgap reference circuit with SCMB configuration using ASAP 7nm PDk
+# Designing a Bandgap reference circuit with SBCM configuration using ASAP 7nm PDk
 ## Contents 
 ## Introduction 
 
@@ -15,7 +15,7 @@ FinFETs serve as the foundation for contemporary nanoelectronic semiconductor de
 #### What is Bandgap reference voltage ? 
 A bandgap reference voltage is a voltage source that generates an output voltage proportional to the bandgap energy of a semiconductor. The most commonly used bandgap references are based on silicon (Si), which typically produce an output of around 1.2 V. Gallium arsenide (GaAs) can also be utilized to create a reference source with a higher output voltage due to its wider bandgap of 1.42 eV, as shown in a recent research study. In theory, any semiconductor can be employed to develop a bandgap voltage reference, provided it can be deposited on standard wafer materials.
 
-#### Bandgap reference circuit with SCMB 
+#### Bandgap reference circuit with SBCM 
 The BGR is essential for providing a stable reference voltage that remains consistent regardless of temperature, supply voltage, and process variations. A Self-Biased Current Mirror (SBCM)-based BGR is used , which improves upon traditional designs that combine Proportional-to-Absolute-Temperature (PTAT) and Complementary-to-Absolute-Temperature (CTAT) voltages. The SBCM architecture enhances scalability and is particularly advantageous for low-power, high-precision applications. The SBCM design negates the need for external biasing through an internal feedback mechanism. Key challenges include managing temperature sensitivity and supply voltage sensitivity in the 7 nm process. The SBCM architecture mitigates temperature dependence by effectively balancing PTAT and CTAT voltages while addressing issues related to low-voltage operation.
 
 #### ASAP 7nm PDK 
@@ -363,7 +363,7 @@ The final output voltage (Vref) was derived from the combination of CTAT and PTA
 After completing the schematic,  the simulation parameters were set up within Xschem to run a DC analysis. The simulation was configured to sweep the temperature from -45°C to 125°C.
 
 
-The below image is taken as a reference for designing a bandgap circuit using SCMB 
+The below image is taken as a reference for designing a bandgap circuit using SBCM 
 
 <picture>
 <img alt = "Bandgap_reference" src="reference.png">
